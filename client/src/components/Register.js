@@ -33,21 +33,24 @@ const Register = () => {
 
     const { name, email, work, add, mobile, desc, age } = inpval;
 
-    const res = await fetch("/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        work,
-        add,
-        mobile,
-        desc,
-        age,
-      }),
-    });
+    const res = await fetch(
+      "https://crud-using-mern-fokf6dpoq-vikassahani1110-gmailcom.vercel.app/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          work,
+          add,
+          mobile,
+          desc,
+          age,
+        }),
+      }
+    );
 
     const data = await res.json();
     console.log(data);

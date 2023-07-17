@@ -19,12 +19,15 @@ const Details = () => {
   const navigate = useNavigate();
 
   const getdata = async () => {
-    const res = await fetch(`/getuser/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://crud-using-mern-fokf6dpoq-vikassahani1110-gmailcom.vercel.app/getuser/${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const data = await res.json();
     console.log(data);
@@ -43,7 +46,7 @@ const Details = () => {
 
   const deleteuser = async (id) => {
     const res2 = await fetch(
-      `https://crudappreactjs.herokuapp.com/deleteuser/${id}`,
+      `https://crud-using-mern-fokf6dpoq-vikassahani1110-gmailcom.vercel.app/deleteuser/${id}`,
       {
         method: "DELETE",
         headers: {
