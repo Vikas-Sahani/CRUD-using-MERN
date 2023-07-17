@@ -19,15 +19,12 @@ const Details = () => {
   const navigate = useNavigate();
 
   const getdata = async () => {
-    const res = await fetch(
-      `https://crud-using-mern-fokf6dpoq-vikassahani1110-gmailcom.vercel.app/getuser/${id}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res = await fetch(`/getuser/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     const data = await res.json();
     console.log(data);
@@ -45,15 +42,12 @@ const Details = () => {
   }, []);
 
   const deleteuser = async (id) => {
-    const res2 = await fetch(
-      `https://crud-using-mern-fokf6dpoq-vikassahani1110-gmailcom.vercel.app/deleteuser/${id}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const res2 = await fetch(`/deleteuser/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
 
     const deletedata = await res2.json();
     console.log(deletedata);
