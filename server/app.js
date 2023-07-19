@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 
 // app.use(cors());
 
-const allowedOrigins = ["http://example1.com", "http://example2.com"];
+const allowedOrigins = ["http://localhost:3000/", `http://localhost:${port}/`];
 app.use(
   cors({
     origin: allowedOrigins,
