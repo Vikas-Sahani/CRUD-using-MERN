@@ -17,7 +17,7 @@ const Home = () => {
   const { dltdata, setDLTdata } = useContext(deldata);
 
   const getdata = async () => {
-    const res = await fetch("/getdata", {
+    const res = await fetch("https://crudusingmern.onrender.com/getdata", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -40,12 +40,15 @@ const Home = () => {
   }, []);
 
   const deleteuser = async (id) => {
-    const res2 = await fetch(`/deleteuser/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res2 = await fetch(
+      `https://crudusingmern.onrender.com/deleteuser/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const deletedata = await res2.json();
     console.log(deletedata);

@@ -19,12 +19,15 @@ const Details = () => {
   const navigate = useNavigate();
 
   const getdata = async (id) => {
-    const res = await fetch(`/getuser/${id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res = await fetch(
+      `https://crudusingmern.onrender.com/getuser/${id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const data = await res.json();
     console.log(data);
@@ -42,12 +45,15 @@ const Details = () => {
   }, [id]);
 
   const deleteuser = async (id) => {
-    const res2 = await fetch(`/deleteuser/${id}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const res2 = await fetch(
+      `https://crudusingmern.onrender.com/deleteuser/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const deletedata = await res2.json();
     console.log(deletedata);
