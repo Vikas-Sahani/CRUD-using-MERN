@@ -1,4 +1,4 @@
-if someone using this project first time & want to run in your local system then pleas follow the following stpes:-
+if someone using this project first time & want to run in your local system then please follow the following stpes:-
 
 1. please install all the dependency of client & server folder using `npm i` by going in these directory
 2. after installing dependencies of client folder & server folder pleas run the
