@@ -9,14 +9,17 @@ const router = require("./routes/router");
 
 const port = process.env.PORT || 5000;
 
-// app.use(cors());
+app.use(cors());
 
-const allowedOrigins = ["http://localhost:3000/", `http://localhost:${port}/`];
-app.use(
-  cors({
-    origin: allowedOrigins,
-  })
-);
+// const allowedOrigins = [
+//   "https://crud-using-mern.netlify.app/",
+//   `https://crudusingmern.onrender.com/`,
+// ];
+// app.use(
+//   cors({
+//     origin: allowedOrigins,
+//   })
+// );
 
 app.use(express.json()); //our data will be in json format that's why
 
