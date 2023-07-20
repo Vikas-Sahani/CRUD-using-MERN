@@ -10,9 +10,9 @@ const Home = () => {
   const [getuserdata, setUserdata] = useState([]);
   console.log(getuserdata);
 
-  const { udata, setUdata } = useContext(adddata);
+  const udataObj = useContext(adddata);
 
-  const { updata, setUPdata } = useContext(updatedata);
+  const updataObj = useContext(updatedata);
 
   const { dltdata, setDLTdata } = useContext(deldata);
 
@@ -61,13 +61,13 @@ const Home = () => {
 
   return (
     <>
-      {udata ? (
+      {udataObj.udata ? (
         <>
           <div
             className="alert alert-success alert-dismissible fade show"
             role="alert"
           >
-            <strong>{udata.name}</strong> added succesfully!
+            <strong>{udataObj.udata.name}</strong> added succesfully!
             <button
               type="button"
               className="btn-close"
@@ -79,13 +79,13 @@ const Home = () => {
       ) : (
         ""
       )}
-      {updata ? (
+      {updataObj.updata ? (
         <>
           <div
             className="alert alert-success alert-dismissible fade show"
             role="alert"
           >
-            <strong>{updata.name}</strong> updated succesfully!
+            <strong>{updataObj.updata.name}</strong> updated succesfully!
             <button
               type="button"
               className="btn-close"

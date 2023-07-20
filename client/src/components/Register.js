@@ -58,7 +58,11 @@ const Register = () => {
     } else {
       navigate("/");
       setUdata(data);
-      console.log("data added");
+      if (udata === "" || data === "") {
+        console.log("data is not added in register page");
+      } else {
+        console.log("data added in register page");
+      }
     }
   };
 

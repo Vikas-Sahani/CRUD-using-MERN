@@ -6,7 +6,7 @@ const Edit = () => {
   // const [getuserdata, setUserdata] = useState([]);
   // console.log(getuserdata);
 
-  const { updata, setUPdata } = useContext(updatedata);
+  const updataObj = useContext(updatedata);
 
   const navigate = useNavigate("");
 
@@ -34,7 +34,7 @@ const Edit = () => {
   const { id } = useParams("");
   console.log(id);
 
-  const getdata = async () => {
+  const getdata = async (id) => {
     const res = await fetch(`/getuser/${id}`, {
       method: "GET",
       headers: {
@@ -54,8 +54,8 @@ const Edit = () => {
   };
 
   useEffect(() => {
-    getdata();
-  }, []);
+    getdata(id);
+  }, [id]);
 
   const updateuser = async (e) => {
     e.preventDefault();
@@ -85,7 +85,7 @@ const Edit = () => {
       alert("fill the data");
     } else {
       navigate("/");
-      setUPdata(data2);
+      updataObj.setUPdata(data2);
     }
   };
 

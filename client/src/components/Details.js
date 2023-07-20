@@ -18,7 +18,7 @@ const Details = () => {
 
   const navigate = useNavigate();
 
-  const getdata = async () => {
+  const getdata = async (id) => {
     const res = await fetch(`/getuser/${id}`, {
       method: "GET",
       headers: {
@@ -38,8 +38,8 @@ const Details = () => {
   };
 
   useEffect(() => {
-    getdata();
-  }, []);
+    getdata(id);
+  }, [id]);
 
   const deleteuser = async (id) => {
     const res2 = await fetch(`/deleteuser/${id}`, {
