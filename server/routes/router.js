@@ -8,7 +8,7 @@ router.post("/register", async (req, res) => {
   const { name, email, age, mobile, work, add, desc } = req.body;
 
   if (!name || !email || !age || !mobile || !work || !add || !desc) {
-    res.status(422).json("plz fill the data");
+    res.status(404).json("plz fill the data");
   }
 
   try {
@@ -16,7 +16,7 @@ router.post("/register", async (req, res) => {
     console.log("reg: ", preuser);
 
     if (preuser) {
-      res.status(422).json("this is user is already present");
+      res.status(404).json("this is user is already present");
     } else {
       const adduser = new users({
         name,
@@ -33,7 +33,7 @@ router.post("/register", async (req, res) => {
       console.log("reg: ", adduser);
     }
   } catch (error) {
-    res.status(422).json(error);
+    res.status(404).json(error);
   }
 });
 
@@ -41,10 +41,10 @@ router.post("/register", async (req, res) => {
 router.get("/getdata", async (req, res) => {
   try {
     const userdata = await users.find();
-    res.status(201).json(userdata);
+    res.status(200).json(userdata);
     console.log("getData: ", userdata);
   } catch (error) {
-    res.status(422).json(error);
+    res.status(404).json(error);
   }
 });
 
@@ -56,9 +56,9 @@ router.get("/getuser/:id", async (req, res) => {
 
     const userindividual = await users.findById({ _id: id });
     console.log("getdataid: ", userindividual);
-    res.status(201).json(userindividual);
+    res.status(200).json(userindividual);
   } catch (error) {
-    res.status(422).json(error);
+    res.status(404).json(error);
   }
 });
 
@@ -72,9 +72,9 @@ router.patch("/updateuser/:id", async (req, res) => {
     });
 
     console.log("updateid: ", updateduser);
-    res.status(201).json(updateduser);
+    res.status(200).json(updateduser);
   } catch (error) {
-    res.status(422).json(error);
+    res.status(404).json(error);
   }
 });
 
@@ -85,9 +85,9 @@ router.delete("/deleteuser/:id", async (req, res) => {
 
     const deletuser = await users.findByIdAndDelete({ _id: id });
     console.log("delid: ", deletuser);
-    res.status(201).json(deletuser);
+    res.status(200).json(deletuser);
   } catch (error) {
-    res.status(422).json(error);
+    res.status(404).json(error);
   }
 });
 

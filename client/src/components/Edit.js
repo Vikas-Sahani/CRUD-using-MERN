@@ -48,7 +48,7 @@ const Edit = () => {
     const data = await res.json();
     console.log(data);
 
-    if (res.status === 422 || !data) {
+    if (res.status === 404 || !data) {
       console.log("error ");
     } else {
       setINP(data);
@@ -87,7 +87,7 @@ const Edit = () => {
     const data2 = await res2.json();
     console.log(data2);
 
-    if (res2.status === 422 || !data2) {
+    if (res2.status === 404 || !data2) {
       alert("fill the data");
     } else {
       navigate("/");

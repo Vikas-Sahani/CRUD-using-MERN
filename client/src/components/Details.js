@@ -32,7 +32,7 @@ const Details = () => {
     const data = await res.json();
     console.log(data);
 
-    if (res.status === 422 || !data) {
+    if (res.status === 404 || !data) {
       console.log("error ");
     } else {
       setUserdata(data);
@@ -58,7 +58,7 @@ const Details = () => {
     const deletedata = await res2.json();
     console.log(deletedata);
 
-    if (res2.status === 422 || !deletedata) {
+    if (res2.status === 404 || !deletedata) {
       console.log("error");
     } else {
       console.log("user deleted");
