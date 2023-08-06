@@ -14,6 +14,8 @@ currently I am facing an issue with deploying the backend so I am pasting the UI
 
 - later I'll also add here Deployed link.
 
+## link of the deployment => https://crud-using-mern.netlify.app/
+
 # Home page
 
 ![Alt text](./uiImg/image.png)
