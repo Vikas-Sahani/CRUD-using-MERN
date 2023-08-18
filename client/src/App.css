@@ -2,6 +2,29 @@
   text-align: right;
 }
 
+.logoImg{
+  height: 3.5rem;  
+}
+
+img.rounded-pill{
+  transition: all 1s ease-in-out;
+  height: 100%;
+}
+img.rounded-pill:hover{
+  height: 105%;
+}
+
+ul li.nav-item a{
+  text-align: center;
+
+}
+
+ul li.nav-item a:hover{
+  background-color: gray;
+  border-radius: 6px;
+  box-shadow: 5px 5px rgb(80, 77, 77);
+}
+
 .container{
   overflow: auto;
 }
@@ -25,4 +48,16 @@
 
 .right_view span{
   font-weight: 400;
+}
+
+h1.shadow-lg{
+  transition: 1s ease-in-out; 
+  color: transparent;
+  background-color: white;
+  -webkit-text-stroke: 1.5px #000; /* boderWidth border color */
+}
+
+h1.shadow-lg:hover{
+  background-color: black;
+  color: white;
 }

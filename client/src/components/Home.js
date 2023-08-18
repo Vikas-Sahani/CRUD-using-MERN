@@ -30,6 +30,7 @@ const Home = () => {
 
     if (res.status === 404 || !data) {
       console.log("error ");
+      alert("error in fetching data");
     } else {
       setUserdata(data);
       console.log("get data");
@@ -65,6 +66,9 @@ const Home = () => {
 
   return (
     <>
+      <h1 className="text-center mt-3 shadow-lg py-2 rounded-pill">
+        CRUD using MERN
+      </h1>
       {udataObj.udata ? (
         <>
           <div
@@ -134,9 +138,9 @@ const Home = () => {
           <table className="table table-striped table-hover">
             <thead>
               <tr className="table-dark">
-                <th>id</th>
+                <th>Id</th>
                 <th>Username</th>
-                <th>email</th>
+                <th>Email</th>
                 <th>Job</th>
                 <th>Number</th>
                 <th></th>
